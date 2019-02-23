@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          计算机网络 - 石坤 | Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://seekun.github.io/article/网络/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#计算机网络" title="计算机网络">计算机网络</a>
+                            
+                        </div>
+                        <h1>计算机网络</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 石坤 on
+                            2019-02-21
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">石坤</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><h2 id="1-基础"><a href="#1-基础" class="headerlink" title="1. 基础"></a>1. 基础</h2><h3 id="各层协议的作用-以及TCP-IP协议的特点"><a href="#各层协议的作用-以及TCP-IP协议的特点" class="headerlink" title="各层协议的作用, 以及TCP/IP协议的特点"></a>各层协议的作用, 以及TCP/IP协议的特点</h3><h5 id="1-五层协议"><a href="#1-五层协议" class="headerlink" title="1. 五层协议"></a>1. 五层协议</h5><ul>
+<li>运用层: 为特定的程序提供数据传输服务, 比如HTTP, DNS, 数据单位为报文</li>
+<li>传输层: 为进程提供通用数据传输服务. 运输层包括两种协议:TCP 与 UDP </li>
+<li>网络层: 为主机提供数据传输服务. 而传输层协议是为主机中的进程提供提供数据传输服务. 网络层把传输层传递下来的报文段或者用户数据报封装成分组</li>
+<li>数据链路层: 网络层针对的还是主机之间的数据传输服务, 而主机之间可以有很多链接, 链路层协议就是为同一链路的主机提供数据传输服务. 数据链路层把网络层传下来的分组封装成帧</li>
+<li>物理层: 考虑的是怎样在传输传输媒体上传输数据比特流, 而不是具体的传输媒体. 物理层的作用是尽可能屏蔽传输媒体和通信手段的差异, 使数据链路层感觉不到这些差异</li>
+</ul>
+<h5 id="2-OSI"><a href="#2-OSI" class="headerlink" title="2. OSI"></a>2. OSI</h5><ul>
+<li>表示层: 数据压缩, 加密以及数据描述, 这使得应用程序不必关心在各台主机中数据内部格式不同的问题</li>
+<li>会话层: 建立及管理会话</li>
+</ul>
+<h5 id="3-TCP-IP协议"><a href="#3-TCP-IP协议" class="headerlink" title="3. TCP/IP协议"></a>3. TCP/IP协议</h5><p>将五层协议中的数据链路层和物理层合并为网络接口层</p>
+<p>TCP/IP体系结构不严格遵循OSI分层概念, 应用层可能会直接使用IP层或网络接口层.</p>
+<h5 id="4-数据在各层之间的传递过程"><a href="#4-数据在各层之间的传递过程" class="headerlink" title="4. 数据在各层之间的传递过程"></a>4. 数据在各层之间的传递过程</h5><p>在向下的过程中, 需要添加下层协议所需要的首部或者尾部, 而在向下的过程中不断拆开首部和尾部</p>
+<p>路由器只有下面三层协议, 因为路由器位于网络核心中, 不需要为进程或者应用程序提供服务, 因此也就不需要传输层和应用层</p>
+<h4 id="UPD与TCP比较-分析上层协议应该使用UDP还是TCP"><a href="#UPD与TCP比较-分析上层协议应该使用UDP还是TCP" class="headerlink" title="UPD与TCP比较, 分析上层协议应该使用UDP还是TCP"></a>UPD与TCP比较, 分析上层协议应该使用UDP还是TCP</h4><ul>
+<li><p>传输控制协议TCP, 提供面向连接, 可靠的数据传输服务, 数据单位为报文段; 提供可靠交付, 有流量控制, 拥塞控制, 提供全双工同学, 面向字节流(把应用层传下来的报文看成字节流, 把字节流组织成大小不等的数据块), 每一条TCP连接只能是点对点的(一对一)</p>
+</li>
+<li><p>用户数据报协议UDP, 提供无连接, 尽最大努力的数据传输服务, 数据单位为用户数据报; 没有拥塞控制, 面向报文(对于应用程序传下来的报文不合并也不拆分, 只是添加UDP首部), 支持一对一, 一对多, 多对一, 多对多的交互通信.</p>
+</li>
+</ul>
+<p>TCP主要提供完整性服务, UDP主要提供及时性服务.</p>
+<h4 id="理解三次握手以及四次挥手具体过程-三次握手的原因-四次挥手原因-TIME-WAIT的作用"><a href="#理解三次握手以及四次挥手具体过程-三次握手的原因-四次挥手原因-TIME-WAIT的作用" class="headerlink" title="理解三次握手以及四次挥手具体过程, 三次握手的原因, 四次挥手原因, TIME_WAIT的作用"></a>理解三次握手以及四次挥手具体过程, 三次握手的原因, 四次挥手原因, TIME_WAIT的作用</h4><h5 id="TCP的三次握手"><a href="#TCP的三次握手" class="headerlink" title="TCP的三次握手"></a>TCP的三次握手</h5><p>假设A为客户端, B为服务器端.</p>
+<ul>
+<li>B处于监听状态, 等待客户端的请求</li>
+<li>A向B发送请求报文, SYN=1, ACK=0, 选择一初始序号x</li>
+<li>B收到请求报文, 如果同意建立连接, 想A发送连接确认报文, SYN=1, ACK=1, 确认号为x+1, 同时也选择一个初始的序号y</li>
+<li>A收到B的连接确认报文后, 还要想B发出确认, 确认号为y+1, 序号为x+1</li>
+<li>B收到A的确认后, 连接建立</li>
+</ul>
+<h5 id="三次握手的原因"><a href="#三次握手的原因" class="headerlink" title="三次握手的原因"></a>三次握手的原因</h5><p>第三次握手是为了防止失效的连接请求到达服务器, 让服务器错误打开连接</p>
+<h5 id="TCP的四次挥手"><a href="#TCP的四次挥手" class="headerlink" title="TCP的四次挥手"></a>TCP的四次挥手</h5><ul>
+<li>A发送连接释放报文, FIN=1</li>
+<li>B收到后发送确认, 此时TCP属于半关闭状态, B能想A发送数据但是A不能向B发送数据</li>
+<li>当B不再需要连接时, 发送连接释放报文, FIN=1</li>
+<li>A收到后发出确认, 进入TIME-WAIT状态, 等待2MSL(最大报文存活时间)后释放连接</li>
+<li>B收到A的确认后释放连接</li>
+</ul>
+<h5 id="四次挥手的原因"><a href="#四次挥手的原因" class="headerlink" title="四次挥手的原因"></a>四次挥手的原因</h5><p>客户端发送了FIN连接释放报文后, 服务器收到了这个报文, 就进入了CLOSE-WAIT状态, 这个状态是为了让服务器发送还未传送完毕的数据, 传送完毕之后, 服务器会发送FIN连接释放报文 </p>
+<h5 id="TIME-WAIT"><a href="#TIME-WAIT" class="headerlink" title="TIME_WAIT"></a>TIME_WAIT</h5><p>客户端接收到服务器端的FIN报文后进入此状态, 此时并不是直接进入CLOSED状态, 还需要等待一个时间计时器设置的时间2MSL. 这么做有两个理由:</p>
+<ul>
+<li>确保最后一个确认报文能够到达. 如果B没收到A发送来的确认报文, 那么就会重新发送连接释放请求报文, A等待一段时间就是为了处理这种情况的发生</li>
+<li>等待一段时间是为了让本连接持续时间内所有产生的报名都从网络中消失, 使得下一次新的连接不会出现旧的连接请求报文.</li>
+</ul>
+<h3 id="可靠传输原理-并设计可靠UDP协议"><a href="#可靠传输原理-并设计可靠UDP协议" class="headerlink" title="可靠传输原理, 并设计可靠UDP协议"></a>可靠传输原理, 并设计可靠UDP协议</h3><p>TCP使用超时重传来实现可靠传输: 如果一个已经发送的报文段在超时时间内没有收到确认, 那么就重传这个报文段. (实现方法: 确认机制, 重传机制, 滑动窗口)</p>
+<p>一个报文段从发送再到接收到确认所经过的试产称为往返时间RTT. </p>
+<p>最简单的方式是在应用层模仿传输层TCP的可靠性传输。下面不考虑拥塞处理，可靠UDP的简单设计。</p>
+<ul>
+<li>1、添加seq/ack机制，确保数据发送到对端</li>
+<li>2、添加发送和接收缓冲区，主要是用户超时重传。</li>
+<li>3、添加超时重传机制。</li>
+</ul>
+<p>详细说明：送端发送数据时，生成一个随机seq=x，然后每一片按照数据大小分配seq。数据到达接收端后接收端放入缓存，并发送一个ack=x的包，表示对方已经收到了数据。发送端收到了ack包后，删除缓冲区对应的数据。时间到后，定时任务检查是否需要重传数据。</p>
+<p>目前有如下开源程序利用udp实现了可靠的数据传输。分别为<strong>RUDP、RTP、UDT</strong>。</p>
+<h2 id="2-HTTP"><a href="#2-HTTP" class="headerlink" title="2.HTTP"></a>2.HTTP</h2><h4 id="GET与POST比较-作用-参数-安全性-幂等性-可缓存"><a href="#GET与POST比较-作用-参数-安全性-幂等性-可缓存" class="headerlink" title="GET与POST比较: 作用, 参数, 安全性, 幂等性, 可缓存"></a>GET与POST比较: 作用, 参数, 安全性, 幂等性, 可缓存</h4><h5 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h5><p>GET用于获取资源, POST用于传输实体主体</p>
+<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><p>GET的参数时出现在URL中, 而POST的参数存在实体主体中. </p>
+<p>因为URL只支持ASCII码, 所以GET的参数中如果存在中文等字符需要先进行编码. 比如, 空格会转化为<code>%20</code></p>
+<h5 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h5><p>安全的HTTP方法值得是不改变服务器状态, 不修改数据, 也就是说它只是可读的.</p>
+<p>GET方法是安全的, 而POST却不是. 因为POST的目的是传送实体主体内容, 这个内容可能是用户上传的表单数据, 上传成功后, 服务器可能把这个数据存储在数据库中, 因此状态发生了改变</p>
+<p>不安全的方法除了POST还有: PUT, DELETE</p>
+<p>安全的方法包括GET, HEAD, OPTIONS</p>
+<h5 id="幂等性"><a href="#幂等性" class="headerlink" title="幂等性"></a>幂等性</h5><p>幂等性指的是同样的请求被执行一次与连续执行多次的效果是一样的, 服务器的状态也是一样的. </p>
+<p>在正确的实现在, GET, HEAD, PUT和DELETE等方法都是幂等的, 而POST方法不是. </p>
+<h5 id="可缓存"><a href="#可缓存" class="headerlink" title="可缓存"></a>可缓存</h5><p>如果要对相应进行缓存, 需要满足以下条件:</p>
+<ul>
+<li>请求报文的HTTP方法本身是可缓存的, 包括GET, HEAD, 但是PUT和DELETE不可缓存, POST多数情况下不可缓存</li>
+<li>响应报文的状态码是可缓存的. 包括: 200, 300, 404, 501等</li>
+<li>响应报文的Cache-Control首部字段没有指定不进行缓存</li>
+</ul>
+<h5 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h5><h6 id="XMLHttpRequest是一个API-它为客户端提供了再客户端和服务器之间传输数据的功能-在AJAX中被大量使用"><a href="#XMLHttpRequest是一个API-它为客户端提供了再客户端和服务器之间传输数据的功能-在AJAX中被大量使用" class="headerlink" title="XMLHttpRequest是一个API, 它为客户端提供了再客户端和服务器之间传输数据的功能. 在AJAX中被大量使用."></a>XMLHttpRequest是一个API, 它为客户端提供了再客户端和服务器之间传输数据的功能. 在AJAX中被大量使用.</h6><p>在使用XMLHttpRequest的POST方法中, 浏览器会先发送Header再发送Data, 但不是所有的浏览器都会这么做, 比如火狐就不会</p>
+<p>而GET方法Header和Data会一起发送</p>
+<h4 id="Cookie作用-安全性问题-和Session的比较"><a href="#Cookie作用-安全性问题-和Session的比较" class="headerlink" title="Cookie作用, 安全性问题, 和Session的比较"></a>Cookie作用, 安全性问题, 和Session的比较</h4><p>Cookie是服务器发送到用户浏览器并保存到本地的一小块数据, 他会在浏览器之后想同一服务器再次发起请求时被携带上, 用于告诉服务器两个请求是否来自于同一个浏览器. </p>
+<h5 id="作用-1"><a href="#作用-1" class="headerlink" title="作用:"></a>作用:</h5><ul>
+<li>会话状态管理(用户登录状态等)</li>
+<li>个性化设置(用户自定义设置)</li>
+<li>浏览器行为跟踪(跟踪分析用户行为)</li>
+</ul>
+<h5 id="安全性问题"><a href="#安全性问题" class="headerlink" title="安全性问题"></a>安全性问题</h5><ul>
+<li>标记为Secure的Cookie只能通过被HTTPS协议加密过的请求发送给服务端.   但即便设置了Secure标记, 敏感信息也不应该通过Cookie传输, 因为Cookie有其固有的不安全性. </li>
+</ul>
+<h5 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h5><p>除了可以将用户信息通过Cookie存在用户浏览器, 也可以利用Session存储在服务器端, 存储在服务器端的信息更加安全. </p>
+<p>Session可以存储在服务器上的文件, 数据库或者内存中. 也可以将Session存在Redis这种内存型数据库中, 效率会更高.  </p>
+<p>使用Session维护用户登录状态的过程:</p>
+<ul>
+<li>用户登录时, 把用户提交的用户名和密码放入HTTP请求报文中</li>
+<li>服务器验证用户名和密码, 如果正确, 则把用户信息存在Redis中, 它在Redis中的Key称为Session ID.</li>
+<li>服务器返回的响应报文的Set-Cookie首部字段包含了这个Session ID, 客户端收到响应报文后提取出Session ID, 从Redis中取出用户信息, 继续之前的业务操作</li>
+</ul>
+<p>应该注意Session ID 的安全性问题, 不能让它被恶意攻击者轻易获取, 那么就不能产生一个容易被猜到的Session ID值. 此外, 还需要经常重新生成 Session ID. 在对安全性要求的场景下, 例如转账等操作, 除了使用Session管理用户状态之外, 还需要对用户进行重新验证, 比如重新输入密码, 或者使用短信验证码等方式</p>
+<h5 id="Cookie与Session比较"><a href="#Cookie与Session比较" class="headerlink" title="Cookie与Session比较"></a>Cookie与Session比较</h5><ul>
+<li>Cookie只能存储ASCII吗字符串, 而Session可以存取任何类型的数据, 所以数据比较复杂时首先Session</li>
+<li>Cookie存在浏览器中, 容易被恶意查看, 不安全. 如果非要将隐私数据存在Cookie中, 可以将Cookie值加密, 然后在服务器中解密</li>
+<li>对于大型网站, 如果用户所有信息都存在Session中, 那么开销是非常大的, 所以不建议将所有用户信息都存在Session中</li>
+</ul>
+<h4 id="长连接与短连接原理以及使用场景-流水线"><a href="#长连接与短连接原理以及使用场景-流水线" class="headerlink" title="长连接与短连接原理以及使用场景, 流水线"></a>长连接与短连接原理以及使用场景, 流水线</h4><p>当浏览器访问一个包含多张图片的HTML页面时, 除了请求访问HTML页面资源, 还会请求图片资源. 如果每进行一次HTTP通信就要新建一个TCP连接, 那么开销会很大. </p>
+<p>长连接只需要建立一次TCP连接就能进行多次HTTP通信.</p>
+<p>HTTP/1.1之后, 默认为长连接, 如果要断开连接, 需要使用Connection: close;</p>
+<h5 id="流水线"><a href="#流水线" class="headerlink" title="流水线"></a>流水线</h5><p>默认情况下, HTTP是按顺序发出的, 下一次请求只有在当前请求收到相应之后才会被发出. 由于会受到网络延迟和带宽的限制, 在下一个请求被发送到服务器之前, 可能需要等待很长时间.</p>
+<p>流水线是在同一条长连接上发出连续的请求, 而不用等待相应返回, 这样可以避免连接延迟.</p>
+<h4 id="HTTP存在的安全性问题-以及HTTPs的加密-认证和完整性保护作用"><a href="#HTTP存在的安全性问题-以及HTTPs的加密-认证和完整性保护作用" class="headerlink" title="HTTP存在的安全性问题, 以及HTTPs的加密, 认证和完整性保护作用"></a>HTTP存在的安全性问题, 以及HTTPs的加密, 认证和完整性保护作用</h4><h5 id="HTTP有以下安全性问题"><a href="#HTTP有以下安全性问题" class="headerlink" title="HTTP有以下安全性问题"></a>HTTP有以下安全性问题</h5><ul>
+<li>使用明文进行通信, 内容可能会被窃听</li>
+<li>不验证通信方的身份, 通信方的身份有可能遭遇伪装</li>
+<li>无法证明报文的完整性, 报文有可能遭篡改</li>
+</ul>
+<h5 id="HTTPs"><a href="#HTTPs" class="headerlink" title="HTTPs"></a>HTTPs</h5><p>HTTPs并不是新协议, 而是让HTTP先和SSL(Secure Sockets Layer)通信, 再由SSL和TCP通信, 也就是说HTTPs使用了隧道进行通信.</p>
+<p>通过使用SSL, HTTPs具有了加密(防窃听), 认证(防伪装)和完整性保护(防篡改)</p>
+<p>HTTPs采用混合的加密机制, 使用非对称秘钥加密用于传输对称秘钥来保证传输过程的安全性, 之后使用对称秘钥加密进行通信来保证通信过程的效率.</p>
+<p>HTTps通过使用证书来对通信方进行认证.</p>
+<p>SSL提供报文摘要功能来进行完整性保护</p>
+<h4 id="HTTP-1-1的特性"><a href="#HTTP-1-1的特性" class="headerlink" title="HTTP/1.1的特性"></a>HTTP/1.1的特性</h4><ul>
+<li>默认为长连接</li>
+<li>支持流水线</li>
+<li>支持同时打开多个TCP连接</li>
+<li>支持虚拟主机</li>
+<li>新增状态码100</li>
+<li>支持分块传输编码</li>
+<li>新增缓存处理指令max-age</li>
+</ul>
+<h2 id="3-Socket"><a href="#3-Socket" class="headerlink" title="3.Socket"></a>3.Socket</h2><h4 id="select-poll-epoll的原理-比较-以及使用场景-epoll的水平触发与边缘触发"><a href="#select-poll-epoll的原理-比较-以及使用场景-epoll的水平触发与边缘触发" class="headerlink" title="select, poll, epoll的原理, 比较, 以及使用场景; epoll的水平触发与边缘触发"></a>select, poll, epoll的原理, 比较, 以及使用场景; epoll的水平触发与边缘触发</h4><p><a href="https://segmentfault.com/a/1190000003063859" target="_blank" rel="noopener">https://segmentfault.com/a/1190000003063859</a></p>
+<p>select/poll/epoll都是 I/O 多路复用的具体实现, select 出现的最早, 之后是 poll, 再是 epoll. </p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>很容易产生一种错觉认为只要用 epoll 就可以了，select 和 poll 都已经过时了，其实它们都有各自的使用场景。</p>
+<h3 id="1-select-应用场景"><a href="#1-select-应用场景" class="headerlink" title="1. select 应用场景"></a>1. select 应用场景</h3><p>select 的 timeout 参数精度为 1ns，而 poll 和 epoll 为 1ms，因此 select 更加适用于实时性要求比较高的场景，比如核反应堆的控制。</p>
+<p>select 可移植性更好，几乎被所有主流平台所支持。</p>
+<h3 id="2-poll-应用场景"><a href="#2-poll-应用场景" class="headerlink" title="2. poll 应用场景"></a>2. poll 应用场景</h3><p>poll 没有最大描述符数量的限制，如果平台支持并且对实时性要求不高，应该使用 poll 而不是 select。</p>
+<h3 id="3-epoll-应用场景"><a href="#3-epoll-应用场景" class="headerlink" title="3. epoll 应用场景"></a>3. epoll 应用场景</h3><p>只需要运行在 Linux 平台上，有大量的描述符需要同时轮询，并且这些连接最好是长连接。</p>
+<p>需要同时监控小于 1000 个描述符，就没有必要使用 epoll，因为这个应用场景下并不能体现 epoll 的优势。</p>
+<p>需要监控的描述符状态变化多，而且都是非常短暂的，也没有必要使用 epoll。因为 epoll 中的所有描述符都存储在内核中，造成每次需要对描述符的状态改变都需要通过 epoll_ctl() 进行系统调用，频繁系统调用降低效率。并且 epoll 的描述符存储在内核，不容易调试。</p>
+<p>Unix有五种 I/O 模型:</p>
+<ul>
+<li>阻塞式 I/O</li>
+</ul>
+<p>应用进程被阻塞, 直到数据复制到应用进程缓存区中才返回</p>
+<ul>
+<li>非阻塞试 I/O</li>
+</ul>
+<p>应用进程执行系统调用后, 内核返回一个错误码. 应用进程可以继续执行, 但是需要不断的执行系统调用来获知 I/O 是否完成, 这种方式成为轮询(polling)</p>
+<ul>
+<li>I/O 复用(select 和 poll)</li>
+</ul>
+<p>使用select或者poll等待数据, 并且可以等待多个套接字中的任何一个变为可读. 这一过程会被阻塞, 当某一个套接字可读时返回, 之后再石笋recvfrom 把数据从内核复制到进程中. </p>
+<p>它可以让单个进程具有处理多个I/O事件的能力. 又称为Event Driven I/O, 即事件驱动 I/O</p>
+<p>select/epoll的好处就在于单个process就可以同时处理多个网络连接的I/O. 它的基本原理就是select, poll, epoll这个function会不断的轮询所负责的所有socket, 当某个socket有数据到达了, 就通知用户进程. </p>
+<blockquote>
+<p>I/O 多路复用的特点是通过一种机制一个进程能同时等待多个文件描述符，而这些文件描述符（套接字描述符）其中的任意一个进入读就绪状态，select()函数就可以返回。</p>
+</blockquote>
+<p>如果一个web服务器没有I/O复用, 那么每一个Socket连接都需要创建一个线程去处理. 如果同时有几万个连接, 那么就需要创建相同数量的线程. 相比于多进程和多线程技术, I/O 复用不需要进程线程创建和切换的开销, 系统开销更小</p>
+<ul>
+<li>信号驱动式 I/O (SIGIO)</li>
+</ul>
+<p>应用进程使用sigaction系统调用, 内核立即返回, 应用进程可以继续执行. 内核在数据到达时向应用进程发送SIGIO信号, 应用进程收到之后在信号处理程序中条用recvfrom将数据从内核复制到应用进程中. </p>
+<ul>
+<li>异步 I/O(AIO)</li>
+</ul>
+<p>应用进程执行aio_read系统调用会立即返回, 应用进程可以继续执行, 不会被阻塞, 内核会在所以操作完成之后向应用进程发送信号. </p>
+<p>异步 I/O 与信号驱动 I/O 的区别在于，异步 I/O 的信号是通知应用进程 I/O 完成，而信号驱动 I/O 的信号是通知应用进程可以开始 I/O。</p>
+
+
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/article/操作系统/" data-toggle="tooltip" data-placement="top" title="操作系统">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/article/Ajax简介/" data-toggle="tooltip" data-placement="top" title="Ajax简介">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer"
+                    data-id="2479022979"
+                    data-server="netease"
+                    data-type="playlist"
+                    data-fixed="true" >
+                </div>
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#网络"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">网络</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-基础"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. 基础</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#各层协议的作用-以及TCP-IP协议的特点"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">各层协议的作用, 以及TCP/IP协议的特点</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#1-五层协议"><span class="toc-nav-number">1.1.1.0.1.</span> <span class="toc-nav-text">1. 五层协议</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-OSI"><span class="toc-nav-number">1.1.1.0.2.</span> <span class="toc-nav-text">2. OSI</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#3-TCP-IP协议"><span class="toc-nav-number">1.1.1.0.3.</span> <span class="toc-nav-text">3. TCP/IP协议</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#4-数据在各层之间的传递过程"><span class="toc-nav-number">1.1.1.0.4.</span> <span class="toc-nav-text">4. 数据在各层之间的传递过程</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#UPD与TCP比较-分析上层协议应该使用UDP还是TCP"><span class="toc-nav-number">1.1.1.1.</span> <span class="toc-nav-text">UPD与TCP比较, 分析上层协议应该使用UDP还是TCP</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#理解三次握手以及四次挥手具体过程-三次握手的原因-四次挥手原因-TIME-WAIT的作用"><span class="toc-nav-number">1.1.1.2.</span> <span class="toc-nav-text">理解三次握手以及四次挥手具体过程, 三次握手的原因, 四次挥手原因, TIME_WAIT的作用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#TCP的三次握手"><span class="toc-nav-number">1.1.1.2.1.</span> <span class="toc-nav-text">TCP的三次握手</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#三次握手的原因"><span class="toc-nav-number">1.1.1.2.2.</span> <span class="toc-nav-text">三次握手的原因</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#TCP的四次挥手"><span class="toc-nav-number">1.1.1.2.3.</span> <span class="toc-nav-text">TCP的四次挥手</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#四次挥手的原因"><span class="toc-nav-number">1.1.1.2.4.</span> <span class="toc-nav-text">四次挥手的原因</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#TIME-WAIT"><span class="toc-nav-number">1.1.1.2.5.</span> <span class="toc-nav-text">TIME_WAIT</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#可靠传输原理-并设计可靠UDP协议"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">可靠传输原理, 并设计可靠UDP协议</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-HTTP"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2.HTTP</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#GET与POST比较-作用-参数-安全性-幂等性-可缓存"><span class="toc-nav-number">1.2.0.1.</span> <span class="toc-nav-text">GET与POST比较: 作用, 参数, 安全性, 幂等性, 可缓存</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#作用"><span class="toc-nav-number">1.2.0.1.1.</span> <span class="toc-nav-text">作用</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#参数"><span class="toc-nav-number">1.2.0.1.2.</span> <span class="toc-nav-text">参数</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#安全"><span class="toc-nav-number">1.2.0.1.3.</span> <span class="toc-nav-text">安全</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#幂等性"><span class="toc-nav-number">1.2.0.1.4.</span> <span class="toc-nav-text">幂等性</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#可缓存"><span class="toc-nav-number">1.2.0.1.5.</span> <span class="toc-nav-text">可缓存</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#XMLHttpRequest"><span class="toc-nav-number">1.2.0.1.6.</span> <span class="toc-nav-text">XMLHttpRequest</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#XMLHttpRequest是一个API-它为客户端提供了再客户端和服务器之间传输数据的功能-在AJAX中被大量使用"><span class="toc-nav-number">1.2.0.1.6.1.</span> <span class="toc-nav-text">XMLHttpRequest是一个API, 它为客户端提供了再客户端和服务器之间传输数据的功能. 在AJAX中被大量使用.</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Cookie作用-安全性问题-和Session的比较"><span class="toc-nav-number">1.2.0.2.</span> <span class="toc-nav-text">Cookie作用, 安全性问题, 和Session的比较</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#作用-1"><span class="toc-nav-number">1.2.0.2.1.</span> <span class="toc-nav-text">作用:</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#安全性问题"><span class="toc-nav-number">1.2.0.2.2.</span> <span class="toc-nav-text">安全性问题</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Session"><span class="toc-nav-number">1.2.0.2.3.</span> <span class="toc-nav-text">Session</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Cookie与Session比较"><span class="toc-nav-number">1.2.0.2.4.</span> <span class="toc-nav-text">Cookie与Session比较</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#长连接与短连接原理以及使用场景-流水线"><span class="toc-nav-number">1.2.0.3.</span> <span class="toc-nav-text">长连接与短连接原理以及使用场景, 流水线</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#流水线"><span class="toc-nav-number">1.2.0.3.1.</span> <span class="toc-nav-text">流水线</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#HTTP存在的安全性问题-以及HTTPs的加密-认证和完整性保护作用"><span class="toc-nav-number">1.2.0.4.</span> <span class="toc-nav-text">HTTP存在的安全性问题, 以及HTTPs的加密, 认证和完整性保护作用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#HTTP有以下安全性问题"><span class="toc-nav-number">1.2.0.4.1.</span> <span class="toc-nav-text">HTTP有以下安全性问题</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#HTTPs"><span class="toc-nav-number">1.2.0.4.2.</span> <span class="toc-nav-text">HTTPs</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#HTTP-1-1的特性"><span class="toc-nav-number">1.2.0.5.</span> <span class="toc-nav-text">HTTP/1.1的特性</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-Socket"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3.Socket</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#select-poll-epoll的原理-比较-以及使用场景-epoll的水平触发与边缘触发"><span class="toc-nav-number">1.3.0.1.</span> <span class="toc-nav-text">select, poll, epoll的原理, 比较, 以及使用场景; epoll的水平触发与边缘触发</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#应用场景"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">应用场景</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-select-应用场景"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">1. select 应用场景</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-poll-应用场景"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">2. poll 应用场景</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-epoll-应用场景"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">3. epoll 应用场景</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#计算机网络" title="计算机网络">计算机网络</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://blog.csdn.net/tmsshikun" target="_blank">CSDN Blog 石坤</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/seekun">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 石坤 2019
+                    <br>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=seekun&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://seekun.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'r45fhy7653897235wg5ye709d930f62e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://seekun.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

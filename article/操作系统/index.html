@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          操作系统 - 石坤 | Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://seekun.github.io/article/操作系统/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#操作系统" title="操作系统">操作系统</a>
+                            
+                        </div>
+                        <h1>操作系统</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 石坤 on
+                            2019-02-21
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">石坤</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="1-基础"><a href="#1-基础" class="headerlink" title="1. 基础"></a>1. 基础</h2><h3 id="1-1-进程与线程的本质区别-以及各自的使用场景"><a href="#1-1-进程与线程的本质区别-以及各自的使用场景" class="headerlink" title="1.1 进程与线程的本质区别, 以及各自的使用场景"></a>1.1 进程与线程的本质区别, 以及各自的使用场景</h3><p><a href="https://cyc2018.github.io/CS-Notes/#/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F?id=%E4%BA%8C%E3%80%81%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86" target="_blank" rel="noopener">https://cyc2018.github.io/CS-Notes/#/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F?id=%E4%BA%8C%E3%80%81%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86</a></p>
+<p>进程是资源分配的基本单位, 而线程是独立调度的基本单位; 一个进程中可以有多个线程, 它们共享进程资源. </p>
+<p>区别: </p>
+<ol>
+<li><p>拥有资源</p>
+<p>进程是资源分配的基本单位, 但是线程不拥有资源, 线程可以访问隶属进程的资源</p>
+</li>
+<li><p>调度</p>
+<p>线程是独立调度的基本单位, 在同一进程中, 线程的切换不会引起进程切换, 从一个进程中的线程切换到另一个进程中的线程时, 会引起进程切换</p>
+</li>
+<li><p>系统开销</p>
+<p>创建或撤销进程, 开销大, 因为涉及到分配或者回收资源; 切换线程开销小, 只需保存和设置少量寄存器内容</p>
+</li>
+<li><p>通信方面</p>
+<p>线程间可以通过直接读写同一进程中的数据进行通信, 但进程通信需要借助IPC</p>
+</li>
+</ol>
+<p>进程状态: 就绪状态; 运行状态; 阻塞状态</p>
+<h3 id="1-2-进程调度算法的特点以及使用场景"><a href="#1-2-进程调度算法的特点以及使用场景" class="headerlink" title="1.2 进程调度算法的特点以及使用场景"></a>1.2 进程调度算法的特点以及使用场景</h3><h4 id="1-批处理系统"><a href="#1-批处理系统" class="headerlink" title="1. 批处理系统"></a>1. 批处理系统</h4><p>批处理系统没有太多用户操作, 算法的目的是保证吞吐量和周转时间</p>
+<h5 id="1-1-先来先服务-FCFS"><a href="#1-1-先来先服务-FCFS" class="headerlink" title="1.1 先来先服务(FCFS)"></a>1.1 先来先服务(FCFS)</h5><p>短作业需要等前面的长作业完成后, 方可以执行. </p>
+<h5 id="1-2-短作业优先-SJF"><a href="#1-2-短作业优先-SJF" class="headerlink" title="1.2 短作业优先(SJF)"></a>1.2 短作业优先(SJF)</h5><p>长作业有可能会饿死</p>
+<h5 id="1-3-最短剩余时间优先-SRTN"><a href="#1-3-最短剩余时间优先-SRTN" class="headerlink" title="1.3 最短剩余时间优先(SRTN)"></a>1.3 最短剩余时间优先(SRTN)</h5><p>按估计剩余时间最短顺序调度</p>
+<h4 id="2-交互式系统"><a href="#2-交互式系统" class="headerlink" title="2. 交互式系统"></a>2. 交互式系统</h4><p>该系统中有大量用户操作, 算法目的是快速地相应</p>
+<h5 id="2-1-时间片轮转"><a href="#2-1-时间片轮转" class="headerlink" title="2.1 时间片轮转"></a>2.1 时间片轮转</h5><h5 id="2-2优先级调度"><a href="#2-2优先级调度" class="headerlink" title="2.2优先级调度"></a>2.2优先级调度</h5><h5 id="2-3多级反馈队列"><a href="#2-3多级反馈队列" class="headerlink" title="2.3多级反馈队列"></a>2.3多级反馈队列</h5><h4 id="3-实时系统"><a href="#3-实时系统" class="headerlink" title="3. 实时系统"></a>3. 实时系统</h4><p>实时系统要求一个请求在一个确定时间内得到相应.</p>
+<p>分为硬实时和软实时, 前者必须满足绝对的截止时间, 后者可以容忍一定的超时</p>
+<h3 id="1-3-进程通信方法的特点以及使用场景"><a href="#1-3-进程通信方法的特点以及使用场景" class="headerlink" title="1.3 进程通信方法的特点以及使用场景"></a>1.3 进程通信方法的特点以及使用场景</h3><h3 id="1-4-死锁必要条件-解决死锁策略-能写出和分析死锁的代码-能说明在数据库管理系统或者Java中如何解决死锁"><a href="#1-4-死锁必要条件-解决死锁策略-能写出和分析死锁的代码-能说明在数据库管理系统或者Java中如何解决死锁" class="headerlink" title="1.4 死锁必要条件 , 解决死锁策略, 能写出和分析死锁的代码, 能说明在数据库管理系统或者Java中如何解决死锁"></a>1.4 死锁必要条件 , 解决死锁策略, 能写出和分析死锁的代码, 能说明在数据库管理系统或者Java中如何解决死锁</h3><h3 id="1-5虚拟机内存的作用-分页系统实现虚拟内存原理"><a href="#1-5虚拟机内存的作用-分页系统实现虚拟内存原理" class="headerlink" title="1.5虚拟机内存的作用, 分页系统实现虚拟内存原理"></a>1.5虚拟机内存的作用, 分页系统实现虚拟内存原理</h3><h3 id="1-6页面置换算法的原理-特别是LRU的实现原理-最好能手写-再说明它在Redis等作为缓存置换算法"><a href="#1-6页面置换算法的原理-特别是LRU的实现原理-最好能手写-再说明它在Redis等作为缓存置换算法" class="headerlink" title="1.6页面置换算法的原理, 特别是LRU的实现原理, 最好能手写, 再说明它在Redis等作为缓存置换算法"></a>1.6页面置换算法的原理, 特别是LRU的实现原理, 最好能手写, 再说明它在Redis等作为缓存置换算法</h3><h3 id="1-7比较分页与分段的区别"><a href="#1-7比较分页与分段的区别" class="headerlink" title="1.7比较分页与分段的区别"></a>1.7比较分页与分段的区别</h3><h3 id="1-8-分析静态链接的不足-以及动态链接的特点"><a href="#1-8-分析静态链接的不足-以及动态链接的特点" class="headerlink" title="1.8 分析静态链接的不足, 以及动态链接的特点"></a>1.8 分析静态链接的不足, 以及动态链接的特点</h3><h2 id="2-Linux"><a href="#2-Linux" class="headerlink" title="2. Linux"></a>2. Linux</h2><p>###1.1 硬链接与软链接的区别</p>
+<p>前提知识:</p>
+<p>文件的组成部分:</p>
+<ul>
+<li>inode: 一个文件占用一个inode, 记录文件属性, 同时记录此文件的内容所在的block编号</li>
+<li>block: 记录文件的内容, 文件很大时, 会占用多个block</li>
+</ul>
+<p>为了解决文件的共享问题, Linux系统引入了两种链接: 硬链接(hard link)和软链接(又称符号链接, 即soft link或symbolic link).</p>
+<p>若一个inode号对应多个文件名, 则称这些文件为硬链接. 换言之, 硬链接就是同一个文件使用了多个别名. 硬链接可以由命令link或ln创建</p>
+<p><code>link oldfile newfile</code></p>
+<p>硬链接特点:</p>
+<ul>
+<li>文件有相同的inode及data block;</li>
+<li>只能对已存在的文件进行创建;</li>
+<li>不能交叉文件系统进程硬链接的创建</li>
+<li>不能对目录进程创建, 只可对文件创建;</li>
+<li>删除一个硬链接文件并不影响其他有相同inode号的文件</li>
+</ul>
+<p>若文件用户数据块中存放的内容是另一文件的路径名的指向, 则该进程就是软链接. 软链接的创建与使用没有类似硬链接的诸多限制. </p>
+<p><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html" target="_blank" rel="noopener">详细</a></p>
+<h3 id="1-2-僵尸进程与孤儿进程的区别-从SIGCHLD分析产生僵尸进程的原因"><a href="#1-2-僵尸进程与孤儿进程的区别-从SIGCHLD分析产生僵尸进程的原因" class="headerlink" title="1.2 僵尸进程与孤儿进程的区别, 从SIGCHLD分析产生僵尸进程的原因"></a>1.2 僵尸进程与孤儿进程的区别, 从SIGCHLD分析产生僵尸进程的原因</h3><p>进程的状态: R, S, D, T, Z, X</p>
+<p>R: 可执行状态</p>
+<p>S: 可中断的睡眠状态</p>
+<p>D: 不可中断的睡眠状态</p>
+<p>T: 暂停状态或跟踪状态</p>
+<p>Z: 退出状态, 进程成为僵尸进程(zombie, terminated but not reaped by its parent)</p>
+<p>进程的三种基本状态:</p>
+<p>就绪(Ready) 执行(Running) 阻塞(Blocked)</p>
+<h5 id="SIGCHLD"><a href="#SIGCHLD" class="headerlink" title="SIGCHLD"></a>SIGCHLD</h5><p>当一个子进程改变了它的状态时, 会发生:</p>
+<ul>
+<li>得到SIGCHLD信号</li>
+<li>waitpid()或者wait()调用会返回</li>
+</ul>
+<p>在子进程退出时, 它的进程描述符不会立即释放, 这是为了让父进程得到子进程信息, 父进程通过wait()和waitpid()来获得一个已经退出的子进程信息</p>
+<h5 id="孤儿进程"><a href="#孤儿进程" class="headerlink" title="孤儿进程"></a>孤儿进程</h5><p>一个父进程退出, 而它的一个或者多个子进程还在运行, 那么这些子进程将成为孤儿进程. </p>
+<p>孤儿进程将被init进程(进程号为1)所收养, 并由init进程对它们完成状态收集工作. </p>
+<p>由于孤儿进程会被init进程收养, 所以孤儿进程不会对系统造成危害</p>
+<h5 id="僵尸进程"><a href="#僵尸进程" class="headerlink" title="僵尸进程"></a>僵尸进程</h5><p>一个子进程的进程描述符在子进程退出时不会释放, 只要当父进程通过wait()或waitpid()获取了子进程信息后才会释放. 如果子进程退出, 而父进程并没有调用wait()或waitpid(), 那么子进程的进程描述符仍然保存再系统中, 这种进程被称为僵尸进程</p>
+<p>僵尸进程通过ps命令显示出来的状态为Z(zombie)</p>
+<p>系统所能使用的进程号是有限的, 如果产生大量僵尸进程, 将因为没有可用的进程号而导致系统不能产生新的进程</p>
+<p>要消灭系统中大量的僵尸进程, 只需要将其父进程杀死, 此时僵尸进程就会变成孤儿进程, 从而被init所收养, 这样init就是释放所有僵尸进程所占有的资源, 从而结束僵尸进程.</p>
+<h3 id="1-3能够使用常用的命令-比如cat文件内容查看-find搜索文件-以及cut-sort等管线命令-了解-grep-和-awk-的作用"><a href="#1-3能够使用常用的命令-比如cat文件内容查看-find搜索文件-以及cut-sort等管线命令-了解-grep-和-awk-的作用" class="headerlink" title="1.3能够使用常用的命令, 比如cat文件内容查看, find搜索文件, 以及cut, sort等管线命令. 了解 grep 和 awk 的作用"></a>1.3能够使用常用的命令, 比如cat文件内容查看, find搜索文件, 以及cut, sort等管线命令. 了解 grep 和 awk 的作用</h3><h5 id="使用find命令搜索文件"><a href="#使用find命令搜索文件" class="headerlink" title="使用find命令搜索文件"></a>使用find命令搜索文件</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find [basedir] [option]</span><br><span class="line">实例: find . -name "shadow*" </span><br><span class="line">返回当前目录下, 文件名匹配"shadow"的路径</span><br></pre></td></tr></table></figure>
+<h4 id="管道指令"><a href="#管道指令" class="headerlink" title="管道指令"></a>管道指令</h4><p>管道是将一根命令的标准输出作为另一个命令的标准输入, 在数据需要经过多个步骤的处理之后才能得到我们想要的内容时就可以使用管道</p>
+<p>在命令之间使用 <code>|</code>分隔各个管道命令</p>
+<h5 id="1-提取指令"><a href="#1-提取指令" class="headerlink" title="1. 提取指令"></a>1. 提取指令</h5><p>cut可以对数据进行切分, 得到想要的部分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-d  分隔符</span><br><span class="line">-f 通过-d分割后, 使用-f n 取出第 n 个区间</span><br><span class="line">-c 以字符为单位取出数据</span><br></pre></td></tr></table></figure>
+<p>实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">last | cut -d &apos; &apos; -f 1</span><br><span class="line">说明: last显示登入者的信息, 使用分隔符 -d 用空格&quot; &quot;把信息分割开, 使用 -f 取出第 1 块区间</span><br><span class="line"></span><br><span class="line">export | cut -c 12-</span><br><span class="line">说明: 取出第 12 字符以后的字符串</span><br></pre></td></tr></table></figure>
+<h5 id="2-排序指令"><a href="#2-排序指令" class="headerlink" title="2. 排序指令"></a>2. 排序指令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sort用于排序</span><br><span class="line">参数:</span><br><span class="line">-f 忽略大小写</span><br><span class="line">-b 忽略最前面的空格</span><br><span class="line">-n 使用数字</span><br><span class="line">-r 反向排序</span><br><span class="line">-u unique, 重复的内容只出现一次</span><br><span class="line">-t 分隔符, 默认为tab</span><br><span class="line">-k 指定排序区间</span><br></pre></td></tr></table></figure>
+<h4 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h4><p>grep, 使用正则表达式进行全局查找并打印</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">grep [-acinv] 要搜寻的字符串 filename</span><br><span class="line">-c 统计个数</span><br><span class="line">-i 忽略大小写</span><br><span class="line">-n 输出行号</span><br><span class="line">-v 反向选择</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">实例:</span><br><span class="line">grep -n &quot;the&quot; filename</span><br></pre></td></tr></table></figure>
+<p>注意: <code>{</code>和<code>}</code>在shell中有特殊意义, 所以必须使用转义字符</p>
+
+
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/article/面向对象/" data-toggle="tooltip" data-placement="top" title="面向对象">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/article/网络/" data-toggle="tooltip" data-placement="top" title="计算机网络">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer"
+                    data-id="2479022979"
+                    data-server="netease"
+                    data-type="playlist"
+                    data-fixed="true" >
+                </div>
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-基础"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1. 基础</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-1-进程与线程的本质区别-以及各自的使用场景"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1.1 进程与线程的本质区别, 以及各自的使用场景</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-2-进程调度算法的特点以及使用场景"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">1.2 进程调度算法的特点以及使用场景</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-批处理系统"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">1. 批处理系统</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#1-1-先来先服务-FCFS"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">1.1 先来先服务(FCFS)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#1-2-短作业优先-SJF"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">1.2 短作业优先(SJF)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#1-3-最短剩余时间优先-SRTN"><span class="toc-nav-number">1.2.1.3.</span> <span class="toc-nav-text">1.3 最短剩余时间优先(SRTN)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-交互式系统"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2. 交互式系统</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-1-时间片轮转"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">2.1 时间片轮转</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-2优先级调度"><span class="toc-nav-number">1.2.2.2.</span> <span class="toc-nav-text">2.2优先级调度</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-3多级反馈队列"><span class="toc-nav-number">1.2.2.3.</span> <span class="toc-nav-text">2.3多级反馈队列</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-实时系统"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">3. 实时系统</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-3-进程通信方法的特点以及使用场景"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">1.3 进程通信方法的特点以及使用场景</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-4-死锁必要条件-解决死锁策略-能写出和分析死锁的代码-能说明在数据库管理系统或者Java中如何解决死锁"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">1.4 死锁必要条件 , 解决死锁策略, 能写出和分析死锁的代码, 能说明在数据库管理系统或者Java中如何解决死锁</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-5虚拟机内存的作用-分页系统实现虚拟内存原理"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">1.5虚拟机内存的作用, 分页系统实现虚拟内存原理</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-6页面置换算法的原理-特别是LRU的实现原理-最好能手写-再说明它在Redis等作为缓存置换算法"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">1.6页面置换算法的原理, 特别是LRU的实现原理, 最好能手写, 再说明它在Redis等作为缓存置换算法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-7比较分页与分段的区别"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">1.7比较分页与分段的区别</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-8-分析静态链接的不足-以及动态链接的特点"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">1.8 分析静态链接的不足, 以及动态链接的特点</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-Linux"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2. Linux</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-2-僵尸进程与孤儿进程的区别-从SIGCHLD分析产生僵尸进程的原因"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">1.2 僵尸进程与孤儿进程的区别, 从SIGCHLD分析产生僵尸进程的原因</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#SIGCHLD"><span class="toc-nav-number">2.1.0.1.</span> <span class="toc-nav-text">SIGCHLD</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#孤儿进程"><span class="toc-nav-number">2.1.0.2.</span> <span class="toc-nav-text">孤儿进程</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#僵尸进程"><span class="toc-nav-number">2.1.0.3.</span> <span class="toc-nav-text">僵尸进程</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-3能够使用常用的命令-比如cat文件内容查看-find搜索文件-以及cut-sort等管线命令-了解-grep-和-awk-的作用"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">1.3能够使用常用的命令, 比如cat文件内容查看, find搜索文件, 以及cut, sort等管线命令. 了解 grep 和 awk 的作用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#使用find命令搜索文件"><span class="toc-nav-number">2.2.0.1.</span> <span class="toc-nav-text">使用find命令搜索文件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#管道指令"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">管道指令</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#1-提取指令"><span class="toc-nav-number">2.2.1.1.</span> <span class="toc-nav-text">1. 提取指令</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-排序指令"><span class="toc-nav-number">2.2.1.2.</span> <span class="toc-nav-text">2. 排序指令</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#正则表达式"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">正则表达式</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#操作系统" title="操作系统">操作系统</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://blog.csdn.net/tmsshikun" target="_blank">CSDN Blog 石坤</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/seekun">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 石坤 2019
+                    <br>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=seekun&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://seekun.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'r45fhy7653897235wg5ye709d930f62e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://seekun.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

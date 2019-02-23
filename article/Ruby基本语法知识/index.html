@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Ruby基本语法知识 - 石坤 | Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://seekun.github.io/article/Ruby基本语法知识/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Ruby" title="Ruby">Ruby</a>
+                            
+                        </div>
+                        <h1>Ruby基本语法知识</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 石坤 on
+                            2018-09-21
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">石坤</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="Ruby基本语法知识"><a href="#Ruby基本语法知识" class="headerlink" title="Ruby基本语法知识"></a>Ruby基本语法知识</h2><ol>
+<li>Array(阵列)</li>
+</ol>
+<p>fruits = [“kiwi”,”plum”]</p>
+<ol start="2">
+<li>class(类别) 类似于Python中的type</li>
+</ol>
+<p>进入IRB<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; 7.class</span><br><span class="line">=&gt; Fixnum</span><br><span class="line">&gt; &quot;kiwi&quot;.class</span><br><span class="line">=&gt; String</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li><p>class有method可以被调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fruits.length  (字符串长度)</span><br><span class="line">fruits.frist </span><br><span class="line">fruits.methods (输入该类class的所有method)</span><br><span class="line">fruits.sort (排序)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>循环</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fruits.each do |fruit|</span><br><span class="line">  puts fruit</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>条件判断</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if 2 &gt; 1</span><br><span class="line">  puts &quot;2&gt;1&quot;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li><p>函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def pluralize(word)</span><br><span class="line">  word + &quot;s&quot;</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">pluralize(&quot;wiki&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输出<br><code>puts &quot;something&quot;</code></p>
+</li>
+</ol>
+<p>特点, ruby依靠后面<code>end</code>来判断语句是否结束了. </p>
+<p>pipeline 管道;</p>
+<h2 id="项目文件归类"><a href="#项目文件归类" class="headerlink" title="项目文件归类"></a>项目文件归类</h2><p>app/:  最重要的文件夹, 包括了controllers, models, views<br>config/: routes修改<br>db/: 数据库<br>assets/: css, 图片, js等静态文件<br>public/: 这是唯一一个放什么就出现什么的资料夹</p>
+<h2 id="MVC模型"><a href="#MVC模型" class="headerlink" title="MVC模型"></a>MVC模型</h2><p>Rails中的MVC模型:<br>Model, view, Controller</p>
+<p>Model 数据层<br>Controller 控制层<br>View 展示层 </p>
+<p>注意: Rails中的View与Django中的View意义完全不同</p>
+<h3 id="Rails-架构使用"><a href="#Rails-架构使用" class="headerlink" title="Rails 架构使用"></a>Rails 架构使用</h3><p><code>rails generate scffold topic title:string description:text</code></p>
+<h3 id="数据库定义"><a href="#数据库定义" class="headerlink" title="数据库定义"></a>数据库定义</h3><p><code>rails generate model vote topic_id:integer</code></p>
+<blockquote>
+<p>数据库中对象与对象之间的关系; 在Django中自己使用的方法有问题, 没有使用过多对多.<br>会自动生成MVC</p>
+</blockquote>
+<h3 id="迁移数据库"><a href="#迁移数据库" class="headerlink" title="迁移数据库"></a>迁移数据库</h3><p><code>rake db:migrate</code><br>告诉 Rails 更新资料库来建立一个用来储存新的 Model 的表格（Table）。</p>
+<p>常用的web操作<br>C – create<br>R – Read<br>U – Update<br>D – Destroy</p>
+<p>Create, Update, Destroy之后需要有提示<br>Destroy之前需要alert, 提示要求确认<br>这四个基本操作, 所用的request method不同</p>
+<h2 id="数据测试"><a href="#数据测试" class="headerlink" title="数据测试"></a>数据测试</h2><p>相当于使用Django后台管理进行数据测试, 看数据库是否按照自己的想法生成<br><code>rails c</code><br>进入rails console, 如此便可以操控数据库里面的数据了<br>class使用首字母大写进行调用, 与Django相同<br><code>Topic.count</code>  count方法返回数量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">my_topic = Topic.first </span><br><span class="line">my_topic.update_attributes(title: &quot;Edited in the console&quot;) # 修改数据</span><br><span class="line">my_topic.votes.create # 新建数据</span><br><span class="line">my_topic.votes.count </span><br><span class="line">my_topic.votes.first.destory # 删除数据</span><br><span class="line">exit # 退出console</span><br></pre></td></tr></table></figure></p>
+<p>association 联合; 同事</p>
+<h2 id="注意对象与实例的区别以及对应的method的不同"><a href="#注意对象与实例的区别以及对应的method的不同" class="headerlink" title="注意对象与实例的区别以及对应的method的不同"></a>注意对象与实例的区别以及对应的method的不同</h2><p>对象: 是一类事物的抽象, 也可以理解为实例的聚合体<br>实例: 对象的具体化<br>对象与实例的关系:<br>先定义对象, 指明其属性及方法; 然后可以声明一个实例, 顺便给这个实例的属性赋值.<br>在ruby中对象与实例的method表<br><img src="quiver-image-url/EAFF1018DB2DD30CAC81F30F584B02A7.jpg =1001x326" alt="IMAGE"></p>
+<h3 id="Model-class-association-的method"><a href="#Model-class-association-的method" class="headerlink" title="Model class/association 的method"></a>Model class/association 的method</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Topic.first</span><br><span class="line">Topic.last</span><br><span class="line">Topic.all</span><br><span class="line">Topic.countye&apos;i</span><br><span class="line">Topic.find_by_id(5)</span><br><span class="line">Topic.destroy_all</span><br><span class="line">my_topic.votes.count</span><br><span class="line">my_topic.votes.create</span><br><span class="line">my_topic.votes.destroy_all</span><br></pre></td></tr></table></figure>
+<h3 id="Model-instance-的-methods"><a href="#Model-instance-的-methods" class="headerlink" title="Model instance 的 methods"></a>Model instance 的 methods</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">my_topic.title</span><br><span class="line">my_topic.update_attributes(title:&quot;New title&quot;)</span><br><span class="line">my_topic.save</span><br><span class="line">my_topic.save!</span><br><span class="line">my_topic.destroy</span><br><span class="line">my_topic.votes.first.destroy</span><br></pre></td></tr></table></figure>
+<p>详情:<br><a href="https://guides.rubyonrails.org/active_record_querying.html" target="_blank" rel="noopener">https://guides.rubyonrails.org/active_record_querying.html</a></p>
+<blockquote>
+<p>nil 出自法语”nihil”意味无物, 有时候, 代表数字0; 在编程中, <code>nil</code>指代一个空集合或者一个列表中没有任何实体. 可以和<code>null</code>互换使用.</p>
+</blockquote>
+<blockquote>
+<p>只有修改教程里面的代码, 才能真正的学会编程<br>如果只是照着教程一步一步做, 永远学不会, 反而会沉迷在自己什么的学会了假象之中<br>eg. 之前是投票+1, 可以试着加一个扣分-1的功能<br>以此监测自己是否真的学会了</p>
+</blockquote>
+<p>排序英文:<br>sort<br>order<br>如果搜索sort没有的话, 试试order</p>
+<h3 id="待完成"><a href="#待完成" class="headerlink" title="待完成"></a>待完成</h3><p>根据投票分数排序topics<br>新增一个 ‘about’ 页面，并将连结放在 topics 列表的最下方。记得也要在 About 页面上放置回 Topics 列表的连结，以免使用者迷路。</p>
+<blockquote>
+<p>自己目前不清楚rails的套路, 无法添加简单的静态页面到路由</p>
+</blockquote>
+<h2 id="输出路由配置"><a href="#输出路由配置" class="headerlink" title="输出路由配置"></a>输出路由配置</h2><p><code>rake routes</code><br>用来检查route是否配置正确</p>
+<h2 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h2><ol>
+<li>先在后台测试是否完成了该功能</li>
+<li>如果完成了, 再考虑与用户进行交互. 而不是相反</li>
+</ol>
+<p>eg. 需求. 加一个投票的按钮, 点一下就+1; 先在后台把数据库设计好, 然后使用代码, 手动完成”+1”的操作, 如果行得通, 证明数据库没问题; 然后在Controller中(控制层)进行测试, 配合指定的URL, 访问一次, 就+1; 如果也没问题; 在展示层, 设计button.<br>如此一来, 就把点击按钮这个操作, 拆分成三个步骤, 方便debug. 把大问题分解为小问题.</p>
+<p>pluralize 使成复数形式</p>
+<h2 id="erb模板语言"><a href="#erb模板语言" class="headerlink" title="erb模板语言"></a>erb模板语言</h2><p>&lt;% %&gt;  loop或者condition statement<br>&lt;%= %&gt; 普通变量</p>
+<h2 id="习惯"><a href="#习惯" class="headerlink" title="习惯"></a>习惯</h2><p>在干事情之前, 清理一下电脑桌面, 把不必要的Chrome书签移到其他桌面, 把无关的应用也移到其他桌面. 保持使用的两个工作桌面的简洁, 打开勿扰模式, 把手机和IPad放在视线之外, 减少可能让自己分心的一切事物.  一般只留三个东西. Chrome浏览器; 记笔记的软件; 编译器(或编辑器)</p>
+
+
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/article/初学一门编程语言- 最少必要知识/" data-toggle="tooltip" data-placement="top" title="初学一门编程语言- 最少必要知识">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/article/Mac使用技巧/" data-toggle="tooltip" data-placement="top" title="Mac使用技巧">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!-- require APlayer -->
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+                <div class="aplayer"
+                    data-id="2479022979"
+                    data-server="netease"
+                    data-type="playlist"
+                    data-fixed="true" >
+                </div>
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Ruby基本语法知识"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Ruby基本语法知识</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#项目文件归类"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">项目文件归类</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MVC模型"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">MVC模型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Rails-架构使用"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Rails 架构使用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#数据库定义"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">数据库定义</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#迁移数据库"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">迁移数据库</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#数据测试"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">数据测试</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#注意对象与实例的区别以及对应的method的不同"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">注意对象与实例的区别以及对应的method的不同</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Model-class-association-的method"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">Model class/association 的method</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Model-instance-的-methods"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">Model instance 的 methods</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#待完成"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">待完成</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#输出路由配置"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">输出路由配置</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#开发流程"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">开发流程</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#erb模板语言"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">erb模板语言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#习惯"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">习惯</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Ruby" title="Ruby">Ruby</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://blog.csdn.net/tmsshikun" target="_blank">CSDN Blog 石坤</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/seekun">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 石坤 2019
+                    <br>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=seekun&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://seekun.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'r45fhy7653897235wg5ye709d930f62e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://seekun.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
