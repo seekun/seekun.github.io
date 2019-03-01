@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          zip在Django中使用- TemplateSyntaxError处理 - 石坤 | Blog
+          石坤 | Blog
         
     </title>
 
-    <link rel="canonical" href="https://seekun.github.io/article/zip在Django中使用- TemplateSyntaxError处理/">
+    <link rel="canonical" href="https://seekun.github.io/article/安大通项目介绍/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -86,14 +86,12 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#Django" title="Django">Django</a>
-                            
                         </div>
-                        <h1>zip在Django中使用- TemplateSyntaxError处理</h1>
+                        <h1></h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by 石坤 on
-                            2019-02-23
+                            2019-02-24
                         </span>
                     </div>
                 
@@ -210,9 +208,16 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>修改view层:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mylist = zip(list1, list2)</span><br><span class="line">return render_to_response(&apos;template.html&apos;, &#123;&apos;mylist&apos;: mylist&#125;)</span><br></pre></td></tr></table></figure>
-<p>template层:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for ab in mylist %&#125;</span><br><span class="line">    &#123;&#123;a.0&#125;&#125;</span><br><span class="line">    &#123;&#123;b.1&#125;&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure></p>
+                <h1 id="“安大通”微信小程序介绍"><a href="#“安大通”微信小程序介绍" class="headerlink" title="“安大通”微信小程序介绍"></a>“安大通”微信小程序介绍</h1><h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p>“安大通”是一款深受安徽大学学生喜爱的产品, 上线三个月以来, “安大通”累计访问次数超过 150 万， 累计用户：1.5 万， 已经覆盖 3/4 的在校学生。</p>
+<h2 id="产品体验"><a href="#产品体验" class="headerlink" title="产品体验"></a>产品体验</h2><p>用微信扫描下方小程序码, 或者用微信搜索”安大通”, 即可体验!</p>
+<blockquote>
+<p> 测试账号: 用户名为 test, 密码为 test</p>
+</blockquote>
+<p><img src="/img/ahu.png" alt="安大通小程序"></p>
+<h2 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h2><p>“安大通”提供了课表查询, 校内信息聚合, 图书查询, 成绩查询等丰富的功能, 并为校内各大组织社团提供了一个发布信息的平台. </p>
+<p>后续推出的”平时成绩”, “挂科率”查询深受学生喜爱</p>
+<p>作为一个校园小程序, 几乎实现了学生所需要的所有功能, 大大提高了学生的效率</p>
+<h2 id="我的贡献"><a href="#我的贡献" class="headerlink" title="我的贡献"></a>我的贡献</h2><p>作为项目负责人, 担负起了后台开发的重任, 其中包括提供小程序所需数据接口, web 端发布信息, 对信息进行处理, 服务器日常维护, 以及编写了大概 1/3 的前端代码. 除了技术之外, 还负责了产品, 用户体验, 运营推广, 团队协作, 内容编辑, 图像设计等多项任务!</p>
 
 
 
@@ -221,12 +226,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/article/安大通项目介绍/" data-toggle="tooltip" data-placement="top" title="">&larr; Previous Post</a>
+                            <a href="/article/排错指南- 如何快速debug(Stack Overflow, github issues)/" data-toggle="tooltip" data-placement="top" title="排错指南- 如何快速debug(Stack Overflow, github issues)">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/article/面向对象/" data-toggle="tooltip" data-placement="top" title="面向对象">Next Post &rarr;</a>
+                            <a href="/article/zip在Django中使用- TemplateSyntaxError处理/" data-toggle="tooltip" data-placement="top" title="zip在Django中使用- TemplateSyntaxError处理">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -266,24 +271,6 @@
             <!-- Tabe of Content -->
             <!-- Table of Contents -->
 
-  
-    <style>
-      span.toc-nav-number{
-        display: none
-      }
-    </style>
-  
-    
-      <aside id="sidebar">
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
-        
-          <ol class="nav">none</ol>
-        
-        </div>
-      </aside>
-    
-
 
             <!-- Sidebar Container -->
             <div class="
@@ -298,8 +285,6 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Django" title="Django">Django</a>
-                        
                     </div>
                 </section>
                 
