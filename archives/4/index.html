@@ -518,17 +518,16 @@ path,在哪个文件夹中
 
 <div class="post-preview">
 
-    <a href="/article/AttributeError- 'module' has no attribute 'get_installed_distributions'/">
+    <a href="/article/Python快速压缩文件夹中所有图片/">
         <h2 class="post-title">
-            报错处理
+            Python快速压缩文件夹中所有图片
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            解决办法:pip install pip==9.0.1pip 10中没有get_installed_distributions这个方法,所以需要降级之后使用该方法
-参考:https://github.com/pypa/pip/issues/5243
-...
+            使用PIL压缩图片
+简单的例子12345678from PIL import Imagepath = &quot;根据自己的情况填写&quot;foo = Image.open(path)foo = foo.resize((160,300),Image.ANTIALIAS)# resize()的两个参数分别限定宽度和长度foo.save(path ,optimize=True,quality......
         </div>
     </a>
     
@@ -538,7 +537,7 @@ path,在哪个文件夹中
         </p>
         <div class="tags">
             
-              <a href="/tags/#杂谈" title="杂谈">杂谈</a>
+              <a href="/tags/#Python" title="Python">Python</a>
             
         </div>
     
@@ -591,17 +590,13 @@ path,在哪个文件夹中
     <div class="tags">
         
             
-            <a href="/tags/#前端" title="前端" rel="2">前端</a>
-            
-        
-            
             <a href="/tags/#杂谈" title="杂谈" rel="3">杂谈</a>
             
         
             
         
             
-            <a href="/tags/#Python" title="Python" rel="9">Python</a>
+            <a href="/tags/#前端" title="前端" rel="2">前端</a>
             
         
             
@@ -609,6 +604,14 @@ path,在哪个文件夹中
             
         
             
+            <a href="/tags/#Python" title="Python" rel="9">Python</a>
+            
+        
+            
+        
+            
+        
+            
         
             
         
@@ -618,6 +621,8 @@ path,在哪个文件夹中
         
             
         
+            
+            <a href="/tags/#学习方法" title="学习方法" rel="5">学习方法</a>
             
         
             
@@ -627,13 +632,7 @@ path,在哪个文件夹中
             
         
             
-        
-            
             <a href="/tags/#安大通" title="安大通" rel="3">安大通</a>
-            
-        
-            
-            <a href="/tags/#学习方法" title="学习方法" rel="5">学习方法</a>
             
         
             
