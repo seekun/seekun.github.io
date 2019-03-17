@@ -209,6 +209,37 @@
 
 <div class="post-preview">
 
+    <a href="/article/2019-3-5-Python的函数参数传递/">
+        <h2 class="post-title">
+            Python的函数参数传递
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            看两个例子:
+12345678910a = 1def fun(a):    a = 2fun(a)print(a)  # 1a = []def fun(a):    a.append(1)fun(a)print(a)  # [1]
+所有的变量都可以理解是内存中一个对象的“引用”，或者，也可以看似c中void*的感觉。
+12345678a = 1def fun(a):    print("fu......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 石坤 on
+            2019-03-05
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Python" title="Python">Python</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/article/项目详情/">
         <h2 class="post-title">
             石坤个人经历及项目介绍
@@ -243,6 +274,68 @@
 
 <div class="post-preview">
 
+    <a href="/article/Openpyxl操作Excel教程/">
+        <h2 class="post-title">
+            Openpyxl操作Excel教程
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            在这篇教程中我们会想你展示如何使用Python的openpyxl库来控制Excel文件
+Openpyxl
+openpyxl是一个Python库,可以用来读写Excel 2010 xlsx/xlsm/xltx/xltm 文件.
+Excel xlsx
+在这篇教程中,我们将会处理xlsx文件.xlsx是XML电子表格文件格式的一种扩充.xlsx文件支持宏.
+使用pip3安装openpyxl
+1$ ......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 石坤 on
+            2019-03-03
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Python" title="Python">Python</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/Python实现文件自动归类/">
+        <h2 class="post-title">
+            Python实现文件自动归类
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            12345678910目的: 把一批文件,按照后缀名新建对应的文件夹,并移动相应的文件到对应的文件夹.实现文件的自动归类.import shutilimport ospath = "/Users/sk/Documents/script_project2_files"files = os.listdir(path)for f in files:    end = f.split(".")[-1......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 石坤 on
+            2019-02-28
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Python" title="Python">Python</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/article/GUI显示Python中安装的所有第三方库小工具/">
         <h2 class="post-title">
             GUI显示Python中安装的所有第三方库小工具
@@ -267,133 +360,6 @@
         <div class="tags">
             
               <a href="/tags/#Python" title="Python">Python</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/zip在Django中使用- TemplateSyntaxError处理/">
-        <h2 class="post-title">
-            zip在Django中使用- TemplateSyntaxError处理
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            修改view层:
-12mylist = zip(list1, list2)return render_to_response(&apos;template.html&apos;, &#123;&apos;mylist&apos;: mylist&#125;)
-template层:1234&#123;% for ab in mylist %&#125;    &#123;&#123;a.0&#......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 石坤 on
-            2019-02-23
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Django" title="Django">Django</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/Python读取csv表格,使用微信批量发送信息/">
-        <h2 class="post-title">
-            Python读取csv表格,使用微信批量发送信息
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            场景: 给一个csv表格,其中包括了需要发送的联系人,以及需要通知的事项,然后使用微信进行逐个批量发送拆解问题:如何读取csv格式,把信息提取出来使用csv模块新手可能不知道读取之后会返回什么类型的结果,所以可以一步一步输出中间变量
-123import csvf = open(path, &apos;r&apos;)reader = csv.DictReader(f)
-使用微信给好友批量发送......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 石坤 on
-            2019-02-22
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Python" title="Python">Python</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/网络/">
-        <h2 class="post-title">
-            计算机网络
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            网络1. 基础各层协议的作用, 以及TCP/IP协议的特点1. 五层协议
-运用层: 为特定的程序提供数据传输服务, 比如HTTP, DNS, 数据单位为报文
-传输层: 为进程提供通用数据传输服务. 运输层包括两种协议:TCP 与 UDP 
-网络层: 为主机提供数据传输服务. 而传输层协议是为主机中的进程提供提供数据传输服务. 网络层把传输层传递下来的报文段或者用户数据报封装成分组
-数据链路层......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 石坤 on
-            2019-02-21
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#计算机网络" title="计算机网络">计算机网络</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/操作系统/">
-        <h2 class="post-title">
-            操作系统
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 基础1.1 进程与线程的本质区别, 以及各自的使用场景进程是资源分配的基本单位, 而线程是独立调度的基本单位; 一个进程中可以有多个线程, 它们共享进程资源. 
-区别: 
-
-拥有资源
-进程是资源分配的基本单位, 但是线程不拥有资源, 线程可以访问隶属进程的资源
-
-调度
-线程是独立调度的基本单位, 在同一进程中, 线程的切换不会引起进程切换, 从一个进程中的线程切换到另一个进程中的线程时......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 石坤 on
-            2019-02-21
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#操作系统" title="操作系统">操作系统</a>
             
         </div>
     
@@ -527,6 +493,44 @@ A修改代码, 然后推送代码 commit&amp......
 </div>
 <hr>
 
+<div class="post-preview">
+
+    <a href="/article/python脚本-监测github项目更新并自动打开网页/">
+        <h2 class="post-title">
+            Python脚本:监测github项目更新并自动打开网页
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            描述问题想跟踪一个github项目,如果该项目更新了,自动打开网页.
+拆解问题
+监测github项目更新,更新的标志是什么监测网页数据变化在于对比变化如何获取网页资源:
+接口API -&gt; json
+爬虫 xml如果有API就尽量用API,不爬虫.
+
+
+如何打开网页12import webbrowserwebbrowser.open(url)
+
+
+github API使用如何阅读API文......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 石坤 on
+            2019-02-02
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#Python" title="Python">Python</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
 
 
 <!-- Pager -->
@@ -568,17 +572,17 @@ A修改代码, 然后推送代码 commit&amp......
     <div class="tags">
         
             
+            <a href="/tags/#Python" title="Python" rel="11">Python</a>
+            
         
             
             <a href="/tags/#前端" title="前端" rel="2">前端</a>
             
         
             
-            <a href="/tags/#Python" title="Python" rel="9">Python</a>
+            <a href="/tags/#杂谈" title="杂谈" rel="3">杂谈</a>
             
         
-            
-            <a href="/tags/#杂谈" title="杂谈" rel="3">杂谈</a>
             
         
             
@@ -602,13 +606,11 @@ A修改代码, 然后推送代码 commit&amp......
             
         
             
-            <a href="/tags/#Django" title="Django" rel="2">Django</a>
-            
-        
-            
-        
-            
             <a href="/tags/#学习方法" title="学习方法" rel="5">学习方法</a>
+            
+        
+            
+        
             
         
             
@@ -678,23 +680,23 @@ A修改代码, 然后推送代码 commit&amp......
     <ul>
       
         <li>
+          <a href="/article/2019-3-5-Python的函数参数传递/">Python的函数参数传递</a>
+        </li>
+      
+        <li>
           <a href="/article/项目详情/">石坤个人经历及项目介绍</a>
         </li>
       
         <li>
+          <a href="/article/Openpyxl操作Excel教程/">Openpyxl操作Excel教程</a>
+        </li>
+      
+        <li>
+          <a href="/article/Python实现文件自动归类/">Python实现文件自动归类</a>
+        </li>
+      
+        <li>
           <a href="/article/GUI显示Python中安装的所有第三方库小工具/">GUI显示Python中安装的所有第三方库小工具</a>
-        </li>
-      
-        <li>
-          <a href="/article/zip在Django中使用- TemplateSyntaxError处理/">zip在Django中使用- TemplateSyntaxError处理</a>
-        </li>
-      
-        <li>
-          <a href="/article/Python读取csv表格,使用微信批量发送信息/">Python读取csv表格,使用微信批量发送信息</a>
-        </li>
-      
-        <li>
-          <a href="/article/网络/">计算机网络</a>
         </li>
       
     </ul>
@@ -717,7 +719,7 @@ A修改代码, 然后推送代码 commit&amp......
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">3</span></li></ul>
     </div>
 
         <hr>
