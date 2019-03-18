@@ -147,14 +147,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -215,11 +215,10 @@
 </blockquote>
 <h3 id="1-2-项目介绍"><a href="#1-2-项目介绍" class="headerlink" title="1.2 项目介绍"></a>1.2 项目介绍</h3><p>“安大通”小程序实现了课程，成绩，图书查询以及校内通知聚合等十多个丰富的功能。目前为止，“安大通”累计访问次数超过 150 万， 累计用户：1.5 万， 已经覆盖 3/4 的在校学生。</p>
 <h3 id="1-3-技术栈"><a href="#1-3-技术栈" class="headerlink" title="1.3 技术栈"></a>1.3 技术栈</h3><ul>
-<li>使用 Django 框架搭建小程序后台，并提供登录注册，增删改查文章等功能</li>
-<li>应用 Nginx 实现动态静态资源分离，提高静态资源的访问速度</li>
-<li>通过 Gunicorn 管理多个进程，实现高并发控制</li>
-<li>完成 RESTful 风格的接口，返回 Json 格式的数据</li>
-<li>利用 Celery 搭配 RabbitMQ，完成异步通信，提高 Web 页面的吞吐量</li>
+<li>使用 Django 框架搭建小程序后台，完成 RESTful 风格的 API 接口开发</li>
+<li>采用抓包，数据清洗等技术，获取学生平时成绩，打造出爆点功能，新用户量增长 10 倍</li>
+<li>通过数据挖掘等技术，分析出考试成绩分布情况，选课期间日活人数提升了 300% </li>
+<li>利用爬虫技术采集各类通知信息，打造校内聚合阅读平台，便于学生获取信息</li>
 <li>借助 Fabric 实现自动化部署，提高基于SSH的应用部署和系统管理效率</li>
 <li>使用可设置主密码的改进版 Base64 对称加密以保护用户敏感信息</li>
 <li>小程序开发时充分利用缓存机制，减轻服务器压力，提升用户体验</li>
@@ -236,20 +235,19 @@
 <p><img src="/img/01.png" alt=""></p>
 <h2 id="2-科研成果自动校验系统"><a href="#2-科研成果自动校验系统" class="headerlink" title="2. 科研成果自动校验系统"></a>2. 科研成果自动校验系统</h2><h3 id="2-1-项目背景"><a href="#2-1-项目背景" class="headerlink" title="2.1 项目背景"></a>2.1 项目背景</h3><p>该项目为大学生创新创业项目，本系统大大降低了人工校对论文繁杂的工作量，提供了一个校内论文的管理平台</p>
 <h3 id="2-2-技术栈"><a href="#2-2-技术栈" class="headerlink" title="2.2 技术栈"></a>2.2 技术栈</h3><ul>
-<li>使用 Request，BeautifulSoup 等技术爬取论文信息</li>
-<li>论文数据存储于 MongoDB 中，满足海量数据的高效率存储和访问的需求</li>
-<li>使用 Django MVC 模型搭建网站， 实现教师登录注册，多条件搜索等功能</li>
-<li>通过 fuzzywuzzy 计算搜索关键字与论文信息的综合匹配度，实现模糊搜索</li>
-<li>如果用户发现爬取的信息有误, 可以提交修改建议, 管理员进行审核</li>
-<li>该系统大大降低了人工校对论文的工作量, 系统还可以生成某用户论文的 PDF 文件</li>
+<li>基于 Django 进行 Web 开发，实现教师注册登录，论文搜索引擎等功能</li>
+<li>使用 Scrapy 框架爬取论文信息，并论文数据存储于 MongoDB 中</li>
+<li>利用 Celery 搭配 RabbitMQ，完成异步通信，提高 Web 页面吞吐量</li>
+<li>如通过 FuzzyWuzzy 计算搜索关键字与论文信息的综合匹配度，提升了搜索精度与效率</li>
 </ul>
 <h3 id="2-3-项目代码"><a href="#2-3-项目代码" class="headerlink" title="2.3 项目代码"></a>2.3 项目代码</h3><p> <a href="https://github.com/seekun/ManagementSystem" target="_blank" rel="noopener">https://github.com/seekun/ManagementSystem</a></p>
 <h2 id="3-公司展示平台"><a href="#3-公司展示平台" class="headerlink" title="3. 公司展示平台"></a>3. 公司展示平台</h2><p><img src="/img/03.png" alt=""></p>
 <h3 id="3-1-背景"><a href="#3-1-背景" class="headerlink" title="3.1 背景"></a>3.1 背景</h3><p>针对公司的需求, 实现公司项目, 新闻等重要信息的展示</p>
 <h3 id="3-2-技术栈"><a href="#3-2-技术栈" class="headerlink" title="3.2 技术栈"></a>3.2 技术栈</h3><ul>
-<li>使用 Django 搭建网站框架， 实现前后端分离</li>
-<li>实现了图片上传， 增删改查文章， 富文本编辑等功能</li>
-<li>针对用户上传的图片实现压缩处理， 把热数据放在 Redis 缓存中， 提高网站响应速度</li>
+<li>实现了登录注册，图片上传，增删改查文章，富文本编辑，附件下载等功能</li>
+<li>实使用 Django 搭建网站框架，实现前后端分离，增加了网站的可维护性</li>
+<li>针对用户上传的图片实现压缩处理，将热数据放在 Redis 缓存中，提高网站响应速度</li>
+<li>应用 Nginx 实现动态静态资源分离，通过 Gunicorn 管理多个进程，实现高并发控制</li>
 </ul>
 <h3 id="3-3-项目代码"><a href="#3-3-项目代码" class="headerlink" title="3.3 项目代码"></a>3.3 项目代码</h3><p><a href="https://github.com/seekun/LawOffice" target="_blank" rel="noopener">https://github.com/seekun/LawOffice</a></p>
 <h2 id="4-招聘网站"><a href="#4-招聘网站" class="headerlink" title="4. 招聘网站"></a>4. 招聘网站</h2><p><img src="/img/02.png" alt=""></p>
